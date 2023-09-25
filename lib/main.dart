@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:dito_flutter_sdk/dito_flutter_sdk.dart';
 
 void main() {
+  DitoSDK().initialize(
+    apiKey: 'MjAxNC0wNS0yMCAxMTowMzoyMSAtMDMwMEdyYXBoIEFwaSBWMjQ0',
+    secretKey: 'HNVksCIUywbCIBJOv3UjgqmA7p5chPPFrpBbqvFW',
+  );
+
   runApp(const MyApp());
 }
 
@@ -31,27 +36,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _setUser() {
+  void _identify() {
     DitoSDK().identify(
-      name: "Roso",
-      email: "roso@cs.com",
-      gender: "masculino",
-      birthday: '20/07/1995',
-      registrationDate: '20/09/2023',
-      city: 'Piracaia',
-      customData: {
-        'atributo1': 'valorAtributo1',
-        'atributo2': 'valorAtributo2',
-      },
+      cpf: '43536713831',
+      name: "Diego Roso",
+      email: "diego.silva@dito.com.br",
+      gender: "male",
+      birthday: "1995-07-20",
+      location: "Piracaia-SP",
+      customData: {'Attr2': 'Attr2Value'},
     );
   }
 
-  void _tracker() {
-    // DitoSDK().trackEvent('NomeDoEvento', {'teste': 'teste'});
-    String sha1 = DitoSDK().convertToSHA1('DiegoRoso');
-    print(sha1);
+  void _register() {
+    DitoSDK().registerUser();
   }
 
   @override
@@ -69,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$_counter',
+              '0',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
@@ -79,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           FloatingActionButton(
-            onPressed: _setUser,
+            onPressed: _identify,
             tooltip: 'Decrement',
             child: const Text(
               'setUser',
@@ -87,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           const SizedBox(width: 16),
           FloatingActionButton(
-            onPressed: _tracker,
+            onPressed: _register,
             tooltip: 'Increment',
             child: const Text(
               'Tracker',
