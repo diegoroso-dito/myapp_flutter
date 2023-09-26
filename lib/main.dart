@@ -44,6 +44,13 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           OutlinedButton(
             onPressed: () {
+              DitoSDK().setUserId('43536713831');
+            },
+            child: const Text('Set User ID'),
+          ),
+          const SizedBox(height: 20),
+          OutlinedButton(
+            onPressed: () {
               DitoSDK().identify(
                 cpf: '43536713831',
                 name: "Diego Roso",
@@ -69,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               DitoSDK().trackEvent(
                   eventName: 'comprou',
                   revenue: 99.00,
-                  properties: {'produto': 'tenis'});
+                  customData: {'produto': 'tenis'});
             },
             child: const Text('Track'),
           ),
