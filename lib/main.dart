@@ -80,6 +80,13 @@ class _MyHomePageState extends State<MyHomePage> {
             },
             child: const Text('Track'),
           ),
+          const SizedBox(height: 20),
+          OutlinedButton(
+            onPressed: () {
+              DitoSDK().setUserAgent('MyApp/1.0 (Android 12; Google Pixel 6)');
+            },
+            child: const Text('GetUserAgent'),
+          ),
         ],
       ),
     );
