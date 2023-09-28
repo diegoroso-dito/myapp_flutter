@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dito_flutter_sdk/dito_flutter_sdk.dart';
+import 'package:sdk_mobile_flutter/sdk_mobile_flutter.dart';
 
 void main() {
   DitoSDK().initialize(
