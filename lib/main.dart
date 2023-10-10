@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const SizedBox(height: 20),
           OutlinedButton(
             onPressed: () {
-              DitoSDK().registerUser();
+              DitoSDK().identifyUser();
             },
             child: const Text('Register User'),
           ),

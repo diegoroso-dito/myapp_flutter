@@ -76,10 +76,11 @@ packages:
   dito_sdk:
     dependency: "direct main"
     description:
-      path: "../sdk_mobile_flutter"
-      relative: true
-    source: path
-    version: "0.1.0"
+      name: dito_sdk
+      sha256: "1b5e42cbc3edfb3ab1a342b0be33b5f6e0b17b83e60d71a8c24014872bea6edc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   fake_async:
     dependency: transitive
     description:

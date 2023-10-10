@@ -10,8 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dito_sdk:
-    path: ../sdk_mobile_flutter
+  dito_sdk: ^0.2.0
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
