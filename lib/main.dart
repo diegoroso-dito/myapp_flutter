@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:dito_sdk/dito_sdk.dart';
 
 void main() {
+  runApp(const MyApp());
+
   DitoSDK().initialize(
     apiKey: 'MjAxNC0wNS0yMCAxMTowMzoyMSAtMDMwMEdyYXBoIEFwaSBWMjQ0',
     secretKey: 'HNVksCIUywbCIBJOv3UjgqmA7p5chPPFrpBbqvFW',
   );
-
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -75,17 +75,30 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               DitoSDK().trackEvent(
                   eventName: 'comprou',
-                  revenue: 99.00,
+                  revenue: 19.00,
                   customData: {'produto': 'tenis'});
             },
-            child: const Text('Track'),
+            child: const Text('Track1'),
           ),
           const SizedBox(height: 20),
           OutlinedButton(
             onPressed: () {
-              DitoSDK().setUserAgent('MyApp/1.0 (Android 12; Google Pixel 6)');
+              DitoSDK().trackEvent(
+                  eventName: 'comprou',
+                  revenue: 27.00,
+                  customData: {'produto': 'camisa'});
             },
-            child: const Text('GetUserAgent'),
+            child: const Text('Track2'),
+          ),
+          const SizedBox(height: 20),
+          OutlinedButton(
+            onPressed: () {
+              DitoSDK().trackEvent(
+                  eventName: 'comprou',
+                  revenue: 32.00,
+                  customData: {'produto': 'calca'});
+            },
+            child: const Text('Track3'),
           ),
         ],
       ),
